@@ -99,7 +99,8 @@ languages = {
         "percentage": "Percentage",
         "grade": "Grade",
         "report_table": "Report Table",
-        "subject": "Subject"
+        "subject": "Subject",
+        "registration_instruction": "When registering, please set your grade to 10. Alternatively, you can log in using the following credentials:\nEmail: demo@gmail.com\nPassword: demo1234"
     },
     "uz": {
         "title": "IqroAI O'quv Yordamchisi",
@@ -132,7 +133,8 @@ languages = {
         "percentage": "Foiz",
         "grade": "Baho",
         "report_table": "Hisobot jadvali",
-        "subject": "Fan"
+        "subject": "Fan",
+        "registration_instruction": "Ro'yxatdan o'tishda, iltimos, sinfingizni 10 deb belgilang. Yoki quyidagi ma'lumotlar bilan tizimga kirishingiz mumkin:\nEmail: demo@gmail.com\nParol: demo1234"
     },
     "ru": {
         "title": "Обучающий ассистент IqroAI",
@@ -165,7 +167,8 @@ languages = {
         "percentage": "Процент",
         "grade": "Оценка",
         "report_table": "Таблица отчета",
-        "subject": "Предмет"
+        "subject": "Предмет",
+        "registration_instruction": "При регистрации, пожалуйста, укажите 10 класс. Или вы можете войти в систему, используя следующие данные:\nEmail: demo@gmail.com\nПароль: demo1234"
     }
 }
 
@@ -407,7 +410,6 @@ def display_report_charts(report_data, lang):
         st.table(df[[lang['subject'], lang['percentage'], lang['grade']]])
     else:
         st.warning(lang["no_reports"])
-
 def main():
     lang = languages[st.session_state.language]
 
@@ -420,6 +422,8 @@ def main():
         tab1, tab2 = st.tabs([lang["login"], lang["register"]])
         
         with tab1:
+            st.info(lang["registration_instruction"])  # Add this line to display the registration instruction
+
             st.subheader(lang["login"])
             email = st.text_input(lang["email"], key="login_email")
             password = st.text_input(lang["password"], type="password", key="login_password")
@@ -428,6 +432,7 @@ def main():
         
         with tab2:
             st.subheader(lang["register"])
+            st.info(lang["registration_instruction"])  # Add this line to display the registration instruction
             with st.form("registration_form"):
                 first_name = st.text_input(lang["first_name"])
                 last_name = st.text_input(lang["last_name"])
