@@ -410,7 +410,6 @@ def display_report_charts(report_data, lang):
         st.table(df[[lang['subject'], lang['percentage'], lang['grade']]])
     else:
         st.warning(lang["no_reports"])
-
 def main():
     lang = languages[st.session_state.language]
 
