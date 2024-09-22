@@ -467,7 +467,7 @@ def main():
         # Main menu using option_menu
         selected = option_menu(
             menu_title=None,
-            options=[lang["chat"], lang["profile"], lang[""], lang["logout"]],
+            options=[lang["chat"], lang["profile"], lang["request"], lang["logout"]],
             icons=['chat', 'person', 'file-text', 'box-arrow-right'],
             menu_icon="cast",
             default_index=0,
