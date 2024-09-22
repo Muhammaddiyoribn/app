@@ -85,7 +85,7 @@ languages = {
         "logout": "Logout",
         "chat": "Chat",
         "profile": "Profile",
-        "reports": "Reports | This section is currently unavailable",
+        "reports": "Reports",
         "new_chat": "New Chat",
         "generate_report": "Generate New Report",
         "no_reports": "No reports available. Please generate a new report.",
@@ -99,8 +99,7 @@ languages = {
         "percentage": "Percentage",
         "grade": "Grade",
         "report_table": "Report Table",
-        "subject": "Subject",
-        "registration_instruction": "When registering, please set your grade to 10. Alternatively, you can log in using the following credentials:\nEmail: demo@gmail.com\nPassword: demo1234"
+        "subject": "Subject"
     },
     "uz": {
         "title": "IqroAI O'quv Yordamchisi",
@@ -119,7 +118,7 @@ languages = {
         "logout": "Chiqish",
         "chat": "Muloqot",
         "profile": "Profil",
-        "reports": "Hisobotlar | Bu bo\'lim hozircha ishlamaydi",
+        "reports": "Hisobotlar",
         "new_chat": "Yangi muloqot",
         "generate_report": "Yangi hisobot yaratish",
         "no_reports": "Hisobotlar mavjud emas. Iltimos, yangi hisobot yarating.",
@@ -133,8 +132,7 @@ languages = {
         "percentage": "Foiz",
         "grade": "Baho",
         "report_table": "Hisobot jadvali",
-        "subject": "Fan",
-        "registration_instruction": "Ro'yxatdan o'tishda, iltimos, sinfingizni 10 deb belgilang. Yoki quyidagi ma'lumotlar bilan tizimga kirishingiz mumkin:\nEmail: demo@gmail.com\nParol: demo1234"
+        "subject": "Fan"
     },
     "ru": {
         "title": "Обучающий ассистент IqroAI",
@@ -153,7 +151,7 @@ languages = {
         "logout": "Выйти",
         "chat": "Чат",
         "profile": "Профиль",
-        "reports": "Отчеты | Этот раздел пока недоступен",
+        "reports": "Отчеты",
         "new_chat": "Новый чат",
         "generate_report": "Создать новый отчет",
         "no_reports": "Отчеты отсутствуют. Пожалуйста, создайте новый отчет.",
@@ -167,8 +165,7 @@ languages = {
         "percentage": "Процент",
         "grade": "Оценка",
         "report_table": "Таблица отчета",
-        "subject": "Предмет",
-        "registration_instruction": "При регистрации, пожалуйста, укажите 10 класс. Или вы можете войти в систему, используя следующие данные:\nEmail: demo@gmail.com\nПароль: demo1234"
+        "subject": "Предмет"
     }
 }
 
@@ -410,6 +407,7 @@ def display_report_charts(report_data, lang):
         st.table(df[[lang['subject'], lang['percentage'], lang['grade']]])
     else:
         st.warning(lang["no_reports"])
+
 def main():
     lang = languages[st.session_state.language]
 
@@ -422,8 +420,6 @@ def main():
         tab1, tab2 = st.tabs([lang["login"], lang["register"]])
         
         with tab1:
-            st.info(lang["registration_instruction"])  # Add this line to display the registration instruction
-
             st.subheader(lang["login"])
             email = st.text_input(lang["email"], key="login_email")
             password = st.text_input(lang["password"], type="password", key="login_password")
@@ -432,7 +428,6 @@ def main():
         
         with tab2:
             st.subheader(lang["register"])
-            st.info(lang["registration_instruction"])  # Add this line to display the registration instruction
             with st.form("registration_form"):
                 first_name = st.text_input(lang["first_name"])
                 last_name = st.text_input(lang["last_name"])
@@ -482,7 +477,7 @@ def main():
         elif selected == lang["profile"]:
             display_profile(lang)
         elif selected == lang["reports"]:
-            display_(lang)
+            display_reports(lang)
 
 if __name__ == "__main__":
     main()
