@@ -85,7 +85,7 @@ languages = {
         "logout": "Logout",
         "chat": "Chat",
         "profile": "Profile",
-        "reports": "Reports",
+        "reports": "Reports | This section is currently unavailable",
         "new_chat": "New Chat",
         "generate_report": "Generate New Report",
         "no_reports": "No reports available. Please generate a new report.",
@@ -119,7 +119,7 @@ languages = {
         "logout": "Chiqish",
         "chat": "Muloqot",
         "profile": "Profil",
-        "reports": "Hisobotlar",
+        "reports": "Hisobotlar | Bu bo'lim hozircha ishlamaydi",
         "new_chat": "Yangi muloqot",
         "generate_report": "Yangi hisobot yaratish",
         "no_reports": "Hisobotlar mavjud emas. Iltimos, yangi hisobot yarating.",
@@ -153,7 +153,7 @@ languages = {
         "logout": "Выйти",
         "chat": "Чат",
         "profile": "Профиль",
-        "reports": "Отчеты",
+        "reports": "Отчеты | Этот раздел пока недоступен",
         "new_chat": "Новый чат",
         "generate_report": "Создать новый отчет",
         "no_reports": "Отчеты отсутствуют. Пожалуйста, создайте новый отчет.",
@@ -467,7 +467,7 @@ def main():
         # Main menu using option_menu
         selected = option_menu(
             menu_title=None,
-            options=[lang["chat"], lang["profile"], lang["reports"], lang["logout"]],
+            options=[lang["chat"], lang["profile"], lang[""], lang["logout"]],
             icons=['chat', 'person', 'file-text', 'box-arrow-right'],
             menu_icon="cast",
             default_index=0,
@@ -481,8 +481,8 @@ def main():
             display_chat_interface(lang)
         elif selected == lang["profile"]:
             display_profile(lang)
-        elif selected == lang["reports"]:
-            display_reports(lang)
+        elif selected == lang[""]:
+            display_(lang)
 
 if __name__ == "__main__":
     main()
