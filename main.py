@@ -119,7 +119,7 @@ languages = {
         "logout": "Chiqish",
         "chat": "Muloqot",
         "profile": "Profil",
-        "reports": "Hisobotlar | Bu bo'lim hozircha ishlamaydi",
+        "reports": "Hisobotlar | Bu bo\'lim hozircha ishlamaydi",
         "new_chat": "Yangi muloqot",
         "generate_report": "Yangi hisobot yaratish",
         "no_reports": "Hisobotlar mavjud emas. Iltimos, yangi hisobot yarating.",
