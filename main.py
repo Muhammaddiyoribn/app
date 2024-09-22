@@ -7,7 +7,7 @@ import plotly.express as px
 from streamlit_option_menu import option_menu
 
 # FastAPI backend URL
-API_URL = "http://localhost:8000"
+API_URL = "https://seashell-app-5ly42.ondigitalocean.app"
 
 # Set page config
 st.set_page_config(layout="wide", page_title="IqroAI", page_icon="🧠")
