@@ -481,7 +481,7 @@ def main():
             display_chat_interface(lang)
         elif selected == lang["profile"]:
             display_profile(lang)
-        elif selected == lang[""]:
+        elif selected == lang["reports"]:
             display_(lang)
 
 if __name__ == "__main__":
